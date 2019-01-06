@@ -1,6 +1,6 @@
 # liri-node-app
 
-LIRI is a _Language_ Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data. Following commands are supported:
+LIRI is a _Language_ Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data. The following commands are supported:
 + node liri.js concert-this 'artist/band name here'
 + node liri.js spotify-this-song 'song name here'
 + node liri.js movie-this 'movie name here'
