@@ -5,7 +5,7 @@ LIRI is a _Language_ Interpretation and Recognition Interface. LIRI is a command
 + node liri.js spotify-this-song 'song name here'
 + node liri.js movie-this 'movie name here'
 + node liri.js do-what-it-says
-  +(LIRI will take text from inside of random.txt and then use it to call one of LIRI's commands. For example, make a file called `random.txt`. Inside of `random.txt`: spotify-this-song,"I Want it That Way")
+  + (LIRI will take text from inside of random.txt and then use it to call one of LIRI's commands. For example, make a file called `random.txt`. Inside of `random.txt`: spotify-this-song,"I Want it That Way")
 
 Below are screen shots of the use cases including some negative tests.
 
