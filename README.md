@@ -18,5 +18,5 @@ concert-this
 movie-this
 ![node liri.js movie-this star wars](https://github.com/pm38702003/liri-node-app/blob/master/proofOfLifeImages/movieThis.PNG)
 
-do-what-it-says
+do-what-it-says (parameters passed from random.txt)
 ![node liri.js do-what-it-says](https://github.com/pm38702003/liri-node-app/blob/master/proofOfLifeImages/doWhatItSays.PNG)
