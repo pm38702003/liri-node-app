@@ -3,35 +3,41 @@ var keys = require("./keys.js");
 var axios = require("axios");
 var Spotify = require('node-spotify-api');
 
-
 var command = process.argv[2];
 var searchValue = process.argv[3];
 
+runLiri(searchValue, command);
 
-for (var i = 4; i < process.argv.length; i++) {
-    if (i < process.argv.length) {
-        searchValue = searchValue + " ";
+
+function runLiri(searchValue, command) {
+    for (var i = 4; i < process.argv.length; i++) {
+        if (i < process.argv.length) {
+            searchValue = searchValue + " ";
+        }
+        searchValue = searchValue + process.argv[i];
     }
-    searchValue = searchValue + process.argv[i];
+    runCommand(searchValue, command);
 }
 
-switch (command) {
-    case `concert-this`:
-        bandsInTown(searchValue);
-        break;
-    case `spotify-this-song`:
-        spotifyThisSong(searchValue)
-        //   console.log(keys.spotify.id + " " + keys.spotify.secret);
-        break;
-    case `movie-this`:
-        movieThis(searchValue)
-        //call function
-        break;
-    case `do-what-it-says`:
-        //call function
-        break;
-    default:
-        text = "Command isn't supported";
+function runCommand(searchValue, command) {
+    switch (command) {
+        case `concert-this`:
+            bandsInTown(searchValue);
+            break;
+        case `spotify-this-song`:
+            spotifyThisSong(searchValue);
+            //   console.log(keys.spotify.id + " " + keys.spotify.secret);
+            break;
+        case `movie-this`:
+            movieThis(searchValue);
+            //call function
+            break;
+        case `do-what-it-says`:
+            doWhatItSays();
+            break;
+        default:
+            console.log(command + ": Command isn't supported");
+    }
 }
 
 function bandsInTown(artist) {
@@ -150,5 +156,21 @@ function movieThis(search) {
         });
 
 
+
+}
+
+function doWhatItSays(search) {
+    var fs = require("fs");
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        var dataArr = data.split(",");
+        var searchCommand = dataArr[0];
+        var param = dataArr[1];
+        searchValue = param;
+
+        runCommand(param, searchCommand);
+    });
 
 }
